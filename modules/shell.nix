@@ -1,5 +1,4 @@
-{ config, pkg, home, ... }:
-{
+{ config, pkg, home, ... }: {
   programs.home-manager.enable = true;
   programs.zsh = {
     enable = true;
@@ -16,9 +15,7 @@
     enableAliases = true;
   };
 
-  programs.bat = {
-    enable = true;
-  };
+  programs.bat = { enable = true; };
 
   programs.skim = {
     enable = true;
@@ -30,5 +27,18 @@
     enable = true;
     userName = "meguminloli";
     userEmail = "meguminloli@protonmail.com";
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+      enableFlakes = true;
+    };
+  };
+
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

@@ -1,5 +1,4 @@
-{ config, pkgs, home, lib, ... }:
-{
+{ config, pkgs, home, lib, ... }: {
   programs.starship = {
     enable = true;
     settings = {
@@ -12,9 +11,7 @@
         disabled = false;
         threshold = 70;
       };
-      cmd_duration = {
-        min_time = 5;
-      };
+      cmd_duration = { min_time = 5; };
       directory = {
         truncation_length = 100;
         truncate_to_repo = false;
@@ -34,14 +31,8 @@
       git_branch = {
         symbol = "";
         style = "bold yellow";
-        format = lib.concatStrings [
-          "[\("
-          "$symbol"
-          "$branch"
-          "\)]("
-          "$style"
-          ") "
-        ];
+        format =
+          lib.concatStrings [ "[(" "$symbol" "$branch" ")](" "$style" ") " ];
       };
       git_status = {
         conflicted = "🏳";
@@ -65,12 +56,8 @@
           "\\] ](purple)"
         ];
       };
-      time = {
-        disabled = false;
-      };
-      package = {
-        disabled = true;
-      };
+      time = { disabled = false; };
+      package = { disabled = true; };
       username = {
         show_always = true;
         style_user = "red";

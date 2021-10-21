@@ -1,13 +1,44 @@
-{ config, pkgs, home, ... }:
-{
+{ config, pkgs, home, ... }: {
   home.packages = with pkgs; [
-    ffmpeg mpv
-    tealdeer ripgrep
-    neovim wget
-    curl aria
-    tdesktop lollypop
-    songrec nerdfonts
-    font-awesome joypixels
-    noto-fonts-cjk noto-fonts-emoji
+    ffmpeg
+    yt-dlp
+#   mpv
+    helvetica-now-display-otf
+    tealdeer
+    ripgrep
+    newyork
+    neovim
+    wget
+    ripgrep-all
+    gnome.gnome-tweaks
+    curl
+    aria
+    rnix-lsp
+    taskus
+    tdesktop
+    pragmatapro
+    newyork
+    helvetica-now-micro-otf
+    helvetica-now-text-otf
+    circularstd-otf
+    fk-display
+    font-awesome
+    joypixels
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fd
+    hyperfine
+    hexyl
+    tokei
+    grex
+    bandwhich
+    delta
+    macchina
+    ffsend
+    nixpkgs-fmt
+    songrec
+    lollypop
+    gnome.gnome-boxes
+    multimc
   ];
 }
