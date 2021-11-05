@@ -35,6 +35,7 @@
               GDK_BACKEND = "wayland";
               QT_QPA_PLATFORM = "wayland";
               SDL_VIDEODRIVER = "wayland";
+              EDITOR = "nvim";
             };
           };
 

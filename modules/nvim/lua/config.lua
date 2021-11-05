@@ -63,6 +63,10 @@ O = {
       "yaml",
     },
   },
+  highlight = {
+    enable = true,
+    disable = {},
+  },
   terminal = {
     direction = "horizontal",
   },

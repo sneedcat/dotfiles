@@ -137,6 +137,16 @@ require("packer").startup {
         }
       end,
     }
+    use {
+      "simrat39/rust-tools.nvim",
+      after = "nvim-lspconfig",
+      requires = {
+        { "mfussenegger/nvim-dap" },
+      },
+      config = function()
+        require("rust-tools").setup {}
+      end,
+    }
 
     -- Treesitter ----------------------------------------------
     use {

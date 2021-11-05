@@ -39,6 +39,8 @@
     songrec
     lollypop
     gnome.gnome-boxes
+    gnomeExtensions.hplip-menu
     multimc
+    gnome.simple-scan
   ];
 }

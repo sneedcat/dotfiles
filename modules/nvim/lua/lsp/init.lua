@@ -34,7 +34,7 @@ local servers = {
   html = { cmd = { "vscode-html-language-server", "--stdio" } },
   cssls = { cmd = { "vscode-css-language-server", "--stdio" } },
   pyright = {},
-  rust_analyzer = {},
+  -- rust_analyzer = {},
   rnix = {},
   ["null-ls"] = {
     init_options = {

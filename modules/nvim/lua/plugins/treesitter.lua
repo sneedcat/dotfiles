@@ -2,10 +2,7 @@ local ts_config = require "nvim-treesitter.configs"
 
 ts_config.setup {
   ensure_installed = O.treesitter.ensure_installed,
-  highlight = {
-    enable = true,
-    use_languagetree = true,
-  },
+  highlight = O.treesitter.highlight,
   indent = { enable = false },
   playground = { enable = true },
   autotag = { enable = true },
@@ -81,5 +78,5 @@ parser_config.nix = {
   install_info = {
     url = "https://github.com/cstrahan/tree-sitter-nix",
     files = { "src/parser.c", "src/scanner.cc" },
-  }
+  },
 }
