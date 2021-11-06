@@ -27,6 +27,7 @@
     enable = true;
     userName = "meguminloli";
     userEmail = "meguminloli@protonmail.com";
+    delta.enable = true;
   };
 
   programs.direnv = {

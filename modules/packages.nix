@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     ffmpeg
     yt-dlp
-#   mpv
     helvetica-now-display-otf
     tealdeer
     ripgrep
