@@ -42,4 +42,16 @@
     enable = true;
     enableZshIntegration = true;
   };
+  programs.bottom = {
+    enable = true;
+    settings = {
+      flags = {
+        color = "default";
+        tree = true;
+        dot_marker = true;
+        left_legend = true;
+        mem_as_value = true;
+      };
+    };
+  };
 }

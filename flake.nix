@@ -13,6 +13,7 @@
   };
   outputs = { self, nixpkgs, ... }@inputs: {
     homeConfigurations = {
+      # Config for NixOS
       megu = inputs.home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
         homeDirectory = "/home/megu";
@@ -41,20 +42,53 @@
 
           fonts.fontconfig.enable = true;
 
-          # Let Home Manager install and manage itself.
           programs.home-manager.enable = true;
 
           imports = [
+            ./modules/shell_packages.nix
             ./modules/compilers.nix
             ./modules/browser.nix
             ./modules/shell.nix
             ./modules/vscode.nix
             ./modules/alacritty.nix
-            ./modules/packages.nix
+            ./modules/gui_packages.nix
             ./modules/starship.nix
             ./modules/fonts.nix
-            ./modules/misc.nix
             ./modules/mpv.nix
+            ./modules/neovim.nix
+          ];
+        };
+      };
+      # Config for NixOS on WSL, running on top of other distro
+      megumax = inputs.home-manager.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
+        homeDirectory = "/home/megumax";
+        username = "megumax";
+        stateVersion = "21.11";
+        configuration = { config, lib, pkgs, ... }: {
+          nixpkgs.config = {
+            allowUnfree = true;
+            joypixels.acceptLicense = true;
+          };
+          nixpkgs.overlays = [
+            inputs.neovim-nightly-overlay.overlay
+            inputs.fenix.overlay
+            inputs.megu-nixpkgs.overlay
+          ];
+          home = {
+            stateVersion = "21.11";
+            sessionVariables = {
+              EDITOR = "nvim";
+            };
+          };
+
+          programs.home-manager.enable = true;
+
+          imports = [
+            ./modules/compilers.nix
+            ./modules/shell.nix
+            ./modules/shell_packages.nix
+            ./modules/starship.nix
             ./modules/neovim.nix
           ];
         };
